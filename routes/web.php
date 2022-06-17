@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('view-tickets', 'App\Http\Controllers\TicketController@index');
+Route::put('reserve/{id}', 'App\Http\Controllers\TicketController@update');
+Route::get('view-TUE', 'App\Http\Controllers\TUEController@index');
